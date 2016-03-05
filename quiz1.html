@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz1</title>
+	<style>
+	table{
+		border: 3px solid #32acaa;
+	}
+	tr,td{
+		border: 3px solid #32acaa;
+		padding: 10px;
+	}
+	</style>
+	<script type="text/javascript">
+	function own(){
+		var a = document.myform["but"].value;
+		console.log(a);
+
+		var x = document.createElement("TABLE");
+	    x.setAttribute("id", "quiz");
+    	document.body.appendChild(x);
+
+    	var table= document.getElementById("quiz");
+    	var row = table.insertRow(0);
+    	var col1 = row.insertCell(0);
+    	var col2 = row.insertCell(1);
+
+    	col1.innerHTML= " Result ";
+    	col2.innerHTML= "2nd Question ";
+
+    	var b=document.getElementById("quiz").rows[0].cells;
+    	col2.innerHTML= a;
+	}
+
+	</script>
+
+</head>
+<body>
+ <form name="myform" method="post">
+            <label>1) What is 10 + 2 ?</label>
+            <br />
+            <input type="radio" name="but" id="but" value="10" />10
+          	<input type="radio" name="but" id="but" value="11"/>11
+            <input type="radio" name="but" id="but" value="12"/>12
+            <input type="radio" name="but" id="but" value="13"/>13<br>
+            <label>2) Which following number is greater 12,15,19,11 ?</label>
+            <br />
+            <input type="radio" name="but1" id="but" value="12" />12
+          	<input type="radio" name="but1" id="but" value="15"/>15
+            <input type="radio" name="but1" id="but" value="19"/>19
+            <input type="radio" name="but1" id="but" value="11"/>11
+            <div id="msg"></div>
+
+            <label>1) What is 12*12 ?</label>
+            <br />
+            <input type="radio" name="but2" id="but" value="10" />144
+          	<input type="radio" name="but2" id="but" value="11"/>122
+            <input type="radio" name="but2" id="but" value="12"/>100
+            <input type="radio" name="but2" id="but" value="13"/>99<br>
+            <label>1) What is 1 * 0 ?</label>
+            <br />
+            <input type="radio" name="but3" id="but" value="10" />1
+          	<input type="radio" name="but3" id="but" value="11"/>0
+            <input type="radio" name="but3" id="but" value="12"/>2
+            <input type="radio" name="but3" id="but" value="13"/>-1<br>
+            <input type="button" value="Send" onclick="own()" />
+        </form>
+
+</body>
+</html>
